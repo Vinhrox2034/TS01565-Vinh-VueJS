@@ -1,175 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bai4</title>
+    <title>LAB 2 - Bài 4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        .image-blog {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-    </style>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<body class="bg-light">
 
-<body>
+<div class="container mt-4">
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo-energy-pilates.png" style="width:150px;">
-        </a>
+    <!-- HEADER -->
+    <div class="d-flex align-items-center mb-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/FPT_logo_2010.svg/256px-FPT_logo_2010.svg.png"
+             height="40" class="me-3">
+        <h4 class="fw-bold mb-0">FPT POLYTECHNIC</h4>
+    </div>
 
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <h5 class="text-center fw-bold mb-4">LAB 2</h5>
 
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-list fa-solid"></i> Bài viết</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-film fa-solid"></i> Video</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-circle-info fa-solid"></i> Giới thiệu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-calendar-days fa-solid"></i> Sự kiện</a></li>
+    <!-- BUTTON OPEN MODAL -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#accountModal">
+        Tài khoản
+    </button>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="fa-user fa-solid"></i> Tài khoản
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Đăng nhập</a></li>
-                        <li><a class="dropdown-item">Quên mật khẩu</a></li>
-                        <li><a class="dropdown-item">Đăng ký</a></li>
+    <!-- MODAL -->
+    <div class="modal fade" id="accountModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- MODAL HEADER -->
+                <div class="modal-header">
+                    <h5 class="modal-title">ĐĂNG NHẬP / ĐĂNG KÝ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- MODAL BODY -->
+                <div class="modal-body">
+
+                    <!-- TABS -->
+                    <ul class="nav nav-tabs mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#login">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#register">Đăng ký</a>
+                        </li>
                     </ul>
-                </li>
-            </ul>
 
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link">Tiếng Việt</a></li>
-                <li class="nav-item"><a class="nav-link">Tiếng Anh</a></li>
-            </ul>
+                    <!-- TAB CONTENT -->
+                    <div class="tab-content">
+
+                        <!-- TAB ĐĂNG NHẬP -->
+                        <div id="login" class="tab-pane fade show active">
+                            <h6 class="mb-3">Form Đăng nhập</h6>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="Nhập email">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                                </div>
+                                <button class="btn btn-primary w-100">Đăng nhập</button>
+                            </form>
+                        </div>
+
+                        <!-- TAB ĐĂNG KÝ -->
+                        <div id="register" class="tab-pane fade">
+                            <h6 class="mb-3">Form Đăng ký thông tin</h6>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Họ và Tên</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mật khẩu</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <button class="btn btn-success w-100">Đăng ký</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- MODAL FOOTER -->
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        Đóng
+                    </button>
+                </div>
+
+            </div>
         </div>
     </div>
-</nav>
 
-<!-- MAIN -->
-<div class="container mt-5 mb-5">
-    <div class="row">
-
-        <!-- SIDEBAR -->
-        <aside class="col-sm-4">
-            <h2 class="text-info">Về tôi</h2>
-
-            <div class="card mb-3">
-                <img src="images/avatar.png" class="card-img-top">
-                <div class="card-body">
-                    <h5>Giới thiệu bản thân</h5>
-                    <p>
-                       T.S. Trần Hoàng, Tổ chức Tư vấn sức khỏe quốc tế độc lập <br>
-                Châm ngôn: Ta không được chọn nơi mình sinh ra, nhưng ta được chọn cách mình sẽ sống
-                    </p>
-                </div>
-            </div>
-
-           <h3 class="text-info mt-2">Chuyên mục</h3>
-                <ul class="list-group">
-                    <li class="list-group-item active bg-info d-flex justify-content-between align-items-center">
-                        <a class="nav-link text-white" href="#">Chế độ tập</a>
-                        <span class="badge bg-primary rounded-pill">12</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a class="nav-link" href="#">Chế độ dinh dưỡng</a>
-                        <span class="badge bg-primary rounded-pill">15</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a class="nav-link" href="#">Cẩm nang cuộc sống</a>
-                        <span class="badge bg-primary rounded-pill">99</span>
-                    </li>
-                </ul>
-        </aside>
-
-        <!-- BLOG -->
-        <main class="col-sm-8">
-            <h2 class="text-info">Blog của tôi</h2>
-
-            <div class="bg-body-secondary rounded p-4">
-                <div class="row">
-
-                    <div class="col-md-6 mb-3">
-                        <div class="card h-100">
-                            <h5 class="card-header">
-                                Phương pháp tập Pilates giúp phục hồi chấn thương cột sống 💬 16
-                            </h5>
-                            <div class="card-body">
-                                <img src="images/tap-piltes.jpg" class="card-img mb-2">
-                                <p class="small text-muted">
-                                    Ngoài việc giúp duy trì vóc dáng, cải thiện sự linh hoạt,
-                                    đẹp dáng cho người tập, Pilates giúp cơ bắp và các khớp
-                                    xương mạch trở nên mạnh mẽ hơn, dẻo dai hơn, kéo dài hơn...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="d-flex mb-3">
-                                    <img src="images/corevalue.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>Biết ơn đời, đời sẽ thương ta</h6>
-                                        <small>💬 30</small>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex mb-3">
-                                    <img src="images/orange_300x300.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>9 tác dụng tuyệt vời của quả cam</h6>
-                                        <small>💬 28</small>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex mb-3 pb-3 border-bottom">
-                                        <img src="images/sesameoil_300x300.jpg" class="rounded me-3 image-blog"
-                                            alt="Oil">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-1 fw-semibold">10 công dụng bất ngờ từ dầu dừa</h6>
-                                            <p class="text-muted small mb-0">💬 15</p>
-                                        </div>
-                                    </div>
-
-                                <div class="d-flex">
-                                    <img src="images/spinach_300x300.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>Lợi ích khi ăn rau mỗi ngày</h6>
-                                        <small>💬 12</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-center mt-4">
-                    <button class="btn btn-info text-white">Xem thêm</button>
-                </div>
-            </div>
-        </main>
-
-    </div>
 </div>
 
-<footer class="bg-dark text-white text-center py-3">
-    © Copyright by FPT Polytechnic
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
