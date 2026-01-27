@@ -1,173 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bai4</title>
+    <title>Lab 3 - Bài 4: Chi tiết bài viết</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .image-blog {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
+        body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+        .post-title { color: #17a2b8; font-weight: bold; text-align: center; margin: 20px 0; }
+        .post-content img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .comment-section { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .btn-custom { background-color: #198754; color: white; border: none; }
+        .footer { background-color: #212529; color: #ccc; text-align: center; padding: 15px 0; margin-top: 40px; }
     </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo-energy-pilates.png" style="width:150px;">
-        </a>
-
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-energy-pilates.png" height="35" alt="Energy Pilates"></a>
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-list fa-solid"></i> Bài viết</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-film fa-solid"></i> Video</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-circle-info fa-solid"></i> Giới thiệu</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-calendar-days fa-solid"></i> Sự kiện</a></li>
-
+                <li class="nav-item"><a class="nav-link" href="Post.html"><i class="fa fa-list"></i> Bài viết</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-video"></i> Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-info-circle"></i> Giới thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-calendar-alt"></i> Sự kiện</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="fa-user fa-solid"></i> Tài khoản
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Đăng nhập</a></li>
-                        <li><a class="dropdown-item">Quên mật khẩu</a></li>
-                        <li><a class="dropdown-item">Đăng ký</a></li>
-                    </ul>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user"></i> Tài khoản</a>
                 </li>
             </ul>
-
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link">Tiếng Việt</a></li>
-                <li class="nav-item"><a class="nav-link">Tiếng Anh</a></li>
-            </ul>
+            <div class="small"><b>Tiếng Việt</b> | <span class="text-muted">Tiếng Anh</span></div>
         </div>
     </div>
 </nav>
 
-<!-- MAIN -->
-<div class="container mt-5 mb-5">
+<div class="container my-4">
     <div class="row">
-
-        <!-- SIDEBAR -->
-        <aside class="col-sm-4">
-            <h2 class="text-info">Về tôi</h2>
-
-            <div class="card mb-3">
-                <img src="images/avatar.png" class="card-img-top">
-                <div class="card-body">
-                    <h5>Giới thiệu bản thân</h5>
-                    <p>
-                       T.S. Trần Hoàng, Tổ chức Tư vấn sức khỏe quốc tế độc lập <br>
-                Châm ngôn: Ta không được chọn nơi mình sinh ra, nhưng ta được chọn cách mình sẽ sống
-                    </p>
-                </div>
-            </div>
-
-           <h3 class="text-info mt-2">Chuyên mục</h3>
-                <ul class="list-group">
-                    <li class="list-group-item active bg-info d-flex justify-content-between align-items-center">
-                        <a class="nav-link text-white" href="#">Chế độ tập</a>
-                        <span class="badge bg-primary rounded-pill">12</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a class="nav-link" href="#">Chế độ dinh dưỡng</a>
-                        <span class="badge bg-primary rounded-pill">15</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a class="nav-link" href="#">Cẩm nang cuộc sống</a>
-                        <span class="badge bg-primary rounded-pill">99</span>
-                    </li>
+        <main class="col-md-8">
+            <h2 class="post-title">Phương pháp tập Pilates giúp phục hồi chấn thương cột sống</h2>
+            
+            <div class="post-content">
+                <img src="images/tap-piltes.jpg" alt="Tập Pilates">
+                <p>Tập Pilates có thể vẫn còn khá xa lạ với người Việt, nhưng tại các nước phương Tây thì đây chính là phương pháp tập thể dục giúp duy trì vóc dáng, tăng cường ý chí và cải thiện sự linh hoạt, dẻo dai cho người tập.</p>
+                <p>Đặc biệt, các bài tập Pilates còn có khả năng trị đau lưng và phục hồi chấn thương cột sống một cách hiệu quả.</p>
+                <h5 class="fw-bold">Pilates giúp phục hồi chấn thương cột sống nhanh chóng</h5> 
+                <p>Một trong những căn bệnh ngày càng phổ biến, đặc biệt là dân văn phòng, đó là đau lưng, thoát vị đĩa đệm. </p>
+                <p>Tuy nhiên, nếu điều trị không đúng cách có thể dẫn đến nhiều biến chứng nguy hiểm, bao gồm: Ví dụ, điều trị bằng laser không đúng cách hoặc tập yoga không đúng cách có thể khiến bệnh nhân nằm liệt giường. </p>
+                
+                <img src="images/tap-pilates1.jpg" alt="Cat Cow Pose" class="img-fluid mb-3">
+                
+                <h5 class="fw-bold">Phương pháp tập Pilates Cat Cow</h5>
+                <p>Các bước thực hiện: </p>
+                <ul>
+                    <li>Bắt đầu với tư thế 4 điểm. Vai và cổ tay của bạn phải thẳng hàng và vuông góc với thảm, lưng của bạn phải bằng phẳng và xương chậu của bạn phải cân đối. </li>
+                    <li>Hít vào, võng lưng, nâng cằm lên, mở rộng ngực. </li>
+                    <li>Thở ra cong xương cụt, nâng cong lưng và đưa cằm về gần khoang ngực. </li>
+                    <li>Lập đi lặp lại động tác từ 5-7 lần.</li>
                 </ul>
-        </aside>
 
-        <!-- BLOG -->
-        <main class="col-sm-8">
-            <h2 class="text-info">Blog của tôi</h2>
-
-            <div class="bg-body-secondary rounded p-4">
-                <div class="row">
-
-                    <div class="col-md-6 mb-3">
-                        <div class="card h-100">
-                            <h5 class="card-header">
-                                Phương pháp tập Pilates giúp phục hồi chấn thương cột sống 💬 16
-                            </h5>
-                            <div class="card-body">
-                                <img src="images/tap-piltes.jpg" class="card-img mb-2">
-                                <p class="small text-muted">
-                                    Ngoài việc giúp duy trì vóc dáng, cải thiện sự linh hoạt,
-                                    đẹp dáng cho người tập, Pilates giúp cơ bắp và các khớp
-                                    xương mạch trở nên mạnh mẽ hơn, dẻo dai hơn, kéo dài hơn...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="d-flex mb-3">
-                                    <img src="images/corevalue.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>Biết ơn đời, đời sẽ thương ta</h6>
-                                        <small>💬 30</small>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex mb-3">
-                                    <img src="images/orange_300x300.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>9 tác dụng tuyệt vời của quả cam</h6>
-                                        <small>💬 28</small>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex mb-3 pb-3 border-bottom">
-                                        <img src="images/sesameoil_300x300.jpg" class="rounded me-3 image-blog"
-                                            alt="Oil">
-                                        <div class="flex-grow-1">
-                                            <h6 class="mb-1 fw-semibold">10 công dụng bất ngờ từ dầu dừa</h6>
-                                            <p class="text-muted small mb-0">💬 15</p>
-                                        </div>
-                                    </div>
-
-                                <div class="d-flex">
-                                    <img src="images/spinach_300x300.jpg" class="image-blog me-3 rounded">
-                                    <div>
-                                        <h6>Lợi ích khi ăn rau mỗi ngày</h6>
-                                        <small>💬 12</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="text-center mt-4">
-                    <button class="btn btn-info text-white">Xem thêm</button>
-                </div>
+                <h5 class="fw-bold">Lời kết</h5> 
+                <p>Trên đây là phương pháp tập Pilates giúp phục hồi chấn thương cột sống nhanh chóng. Để đạt được kết quả tập luyện như mong muốn, bạn cần duy trì chế độ tập luyện đều đặn, thực hiện đúng động tác, kết hợp cùng chế độ ăn uống khoa học. </p>
             </div>
         </main>
 
+        <aside class="col-md-4">
+            <div class="comment-section p-3 border rounded shadow-sm">
+                <h5 class="fw-bold">Bình luận bài viết tại đây</h5> 
+                <textarea class="form-control mb-2" rows="3" placeholder="Nhập bình luận của bạn"></textarea> 
+                <button class="btn btn-success w-100 mb-4">Gửi bình luận</button> 
+
+                <h6 class="fw-bold">Danh sách các bình luận:</h6> 
+                <ul class="list-unstyled">
+                    <li class="mb-2"><strong>Bình An:</strong> Bài viết rất hữu ích </li>
+                    <li class="mb-2"><strong>Bình An:</strong> Cảm ơn những chia sẻ bổ ích</li> 
+                </ul>
+            </div>
+        </aside>
     </div>
 </div>
 
-<footer class="bg-dark text-white text-center py-3">
-    © Copyright by FPT Polytechnic
+<footer class="footer py-3 bg-dark text-white text-center">
+    <p class="mb-0">&copy; Copyright by FPT Polytechnic</p> 
 </footer>
-</body>
-</html>

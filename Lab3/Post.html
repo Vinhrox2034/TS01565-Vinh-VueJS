@@ -1,120 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai3</title>
+    <title>Lab 3 - Bài 3: Danh sách bài viết</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        .image-blog {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
+        body { background-color: #f8f9fa; font-family: Arial, sans-serif; }
+        .text-cyan { color: #17a2b8; font-weight: bold; }
+        .section-title { color: #17a2b8; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; font-weight: bold; }
+        .badge-pill { border-radius: 50px; }
+        .post-card { border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.3s; }
+        .post-card:hover { transform: translateY(-5px); }
+        .post-img { height: 180px; object-fit: cover; border-radius: 4px; }
+        .footer { background-color: #212529; color: #ccc; text-align: center; padding: 15px 0; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
     <div class="container">
-
-        <a class="navbar-brand" href="Lab3Index.html">
-            <img src="images/logo-energy-pilates.png" alt="Logo" style="width:150px;">
-        </a>
-
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-energy-pilates.png" height="35"></a>
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="Lab3ChuyenMuc.html">
-                        <i class="fa-solid fa-list"></i> Bài viết
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa-film"></i> Video
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa-circle-info"></i> Giới thiệu
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="fa-solid fa-calendar-days"></i> Sự kiện
-                    </a>
-                </li>
-
+                <li class="nav-item"><a class="nav-link active fw-bold text-cyan" href="Post.html"><i class="fa fa-list"></i> Bài viết</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-video"></i> Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-info-circle"></i> Giới thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-envelope"></i> Liên hệ</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                       role="button" data-bs-toggle="dropdown">
-                        <i class="fa-solid fa-user"></i> Tài khoản
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                        <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
-                        <li><a class="dropdown-item" href="#">Đăng ký thành viên</a></li>
-                    </ul>
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-user"></i> Tài khoản</a>
                 </li>
             </ul>
-
-            <ul class="navbar-nav d-flex">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tiếng Việt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tiếng Anh</a>
-                </li>
-            </ul>
-
+            <div class="small"><b>Tiếng Việt</b> | <span class="text-muted">Tiếng Anh</span></div>
         </div>
     </div>
 </nav>
 
-<div class="col-sm-4">
-    <div class="row">
-    <aside>
-    <h2 class="text-info mb-3">Về tôi</h2>
-
-    <div class="card blog">
-        <img src="images/avatar.png" class="card-img-top" alt="avatar">
-        <div class="card-body">
-            <h5 class="card-title">Giới thiệu bản thân</h5>
-            <p class="card-text">
-                T.S. Trần Hoàng, Tổ chức Tư vấn sức khỏe quốc tế độc lập <br>
-                Châm ngôn: Ta không được chọn nơi mình sinh ra, nhưng ta được chọn cách mình sẽ sống
-            </p>
+<div class="container mt-3">
+    <div id="postCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded">
+            <div class="carousel-item active"><img src="images/banner1.jpg" class="d-block w-100"></div>
         </div>
     </div>
+</div>
 
-    <h3 class="text-info mt-2">Chuyên mục</h3>
-    <ul class="list-group">
-        <li class="list-group-item active bg-info d-flex justify-content-between align-items-center">
-            <a class="nav-link" href="#">Chế độ tập</a>
-            <span class="badge bg-primary rounded-pill">12</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a class="nav-link" href="#">Chế độ dinh dưỡng</a>
-            <span class="badge bg-primary rounded-pill">15</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a class="nav-link" href="#">Cẩm nang cuộc sống</a>
-            <span class="badge bg-primary rounded-pill">99</span>
-        </li>
-    </ul>
-    </aside>
-</div> 
+<div class="container my-4">
+    <div class="row">
+        
+        <aside class="col-md-3">
+            <h5 class="section-title">Chuyên mục</h5>
+            <div class="list-group mb-4 shadow-sm">
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active border-0" style="background-color: #17a2b8;">
+                    Chế độ tập <span class="badge bg-primary badge-pill">12</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    Chế độ dinh dưỡng <span class="badge bg-primary badge-pill">15</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    Cẩm nang cuộc sống <span class="badge bg-primary badge-pill">99</span>
+                </a>
+            </div>
+
+            <h5 class="section-title">Bài viết nổi bật</h5>
+            <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex gap-2">
+                    <img src="images/spinach_300x300.jpg" class="rounded" style="width:60px; height:60px; object-fit:cover;">
+                    <div>
+                        <p class="small fw-bold mb-0">Lợi ích khi ăn rau mỗi ngày</p>
+                        <p class="small text-muted mb-0" style="font-size: 11px;">Tiêu thụ rau xanh hàng ngày giúp tăng cường thị lực...</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    <img src="images/orange_300x300.jpg" class="rounded" style="width:60px; height:60px; object-fit:cover;">
+                    <div>
+                        <p class="small fw-bold mb-0">9 tác dụng tuyệt vời của quả cam</p>
+                        <p class="small text-muted mb-0" style="font-size: 11px;">Cam tự hào về khả năng chống lão hóa mạnh mẽ...</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="col-md-9">
+            <h5 class="section-title">Tất cả bài viết</h5>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 post-card p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="fw-bold mb-0">Phương pháp tập Pilates giúp phục hồi chấn thương cột sống</h6>
+                            <span class="badge bg-light text-dark border"><i class="fa fa-comment"></i> 16</span>
+                        </div>
+                        <img src="images/tap-piltes.jpg" class="post-img mb-2">
+                        <p class="small text-muted mb-0">Ngoài việc giúp duy trì vóc dáng, cải thiện sự linh hoạt dẻo dai, các bài tập Pilates còn có khả năng trị đau lưng...</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 post-card p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="fw-bold mb-0">Đây là những gì 1 giờ tập Pilates có thể làm cho cơ thể của bạn</h6>
+                            <span class="badge bg-light text-dark border"><i class="fa fa-comment"></i> 8</span>
+                        </div>
+                        <img src="images/tap-pilates1.jpg" class="post-img mb-2">
+                        <p class="small text-muted mb-0">Được thiết kế để xây dựng cơ bắp săn chắc, khỏe mạnh hơn, bài tập này đã trở thành tên tuổi quen thuộc...</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 post-card p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="fw-bold mb-0">Tập Pilates có thể cải thiện sức khỏe tim mạch của bạn</h6>
+                            <span class="badge bg-light text-dark border"><i class="fa fa-comment"></i> 5</span>
+                        </div>
+                        <img src="images/tim-mach.jpg" class="post-img mb-2">
+                        <p class="small text-muted mb-0">Tập Pilates không chỉ giúp bạn có một cơ thể khỏe mạnh và linh hoạt mà còn có nhiều lợi ích cho tim mạch...</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 post-card p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h6 class="fw-bold mb-0">EAT CLEAN: Nên và không nên ăn thực phẩm nào?</h6>
+                            <span class="badge bg-light text-dark border"><i class="fa fa-comment"></i> 3</span>
+                        </div>
+                        <img src="images/eat-clean.png" class="post-img mb-2">
+                        <p class="small text-muted mb-0">Chúng ta luôn chú trọng lựa chọn thực phẩm sạch và duy trì lối sống lành mạnh. Vậy chế độ Eat Clean là gì?</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link text-cyan" href="#"><i class="fa fa-arrow-left"></i></a></li>
+                    <li class="page-item active"><a class="page-link border-0" style="background-color: #17a2b8;" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link text-cyan" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link text-cyan" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link text-cyan" href="#"><i class="fa fa-arrow-right"></i></a></li>
+                </ul>
+            </nav>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container small">
+        ©Copyright by FPT Polytechnic
+    </div>
+</footer>
+
 </body>
 </html>
