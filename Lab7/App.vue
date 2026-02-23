@@ -1,6 +1,7 @@
 <template>
   <div class="container mt-4">
-    <h2 class="text-center text-primary">LAB 6</h2>
+    <h2 class="text-center text-primary">LAB 7
+    </h2>
 
     <nav class="nav nav-pills mb-3 justify-content-center">
     <router-link to="/lab7/bai1" class="btn btn-dark m-1">Bài 1</router-link>
